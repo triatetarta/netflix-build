@@ -1,13 +1,22 @@
 import React from 'react';
 import './App.scss';
-import HomeScreen from './components/HomeScreen';
+import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <div className='app'>
-      <HomeScreen />
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <LoginScreen />
+            {/* <HomeScreen /> */}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
